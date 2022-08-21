@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheCodes Plus Week 7</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css"/>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="weather-app"> 
+    <div class="row box">
+    <div class="col-5">
+      <form class="search-form" id="search-form">
+      <div class="mb-3">
+        <label for="city" class="form-label" id="form-city-search">What's your city?</label>
+        <input type="search" class="form-control border-0" id="city">
+      </div>
+        <button type="submit" class="btn btn-warning" id="search-button">Search</button>
+        <button type="click" class="btn btn-outline-warning" id="current-location-button">Locate me</button>
+      </form>
+    </div>
+    <div class="col-6">
+      <h4 class="date" id="date">It's Sunday, 26 Jul, 12:00</h4>
+      <div class="container output">
+      <div class="row">
+      <div class="col">
+      <h4 class="city">in <span id="show-city"></span></h4>
+      <h2> <strong class="degree"><span id="temp-main"></span>º</strong> 
+        <small class="units"> 
+          <a href="#"  id="cels">C</a> | 
+          <a href="#" id="fahr">F</a>
+        </small>
+      </h2>
+      </div>
+      <div class="col">
+      <img src=""
+      class="icon"
+      id="icon">
+      </div>
+      </div>
+      </div>
+        <span class="details">
+             </br>
+        Sky: <span id="condition"></span>  
+        </br>
+        Humidity: <span id="humidity"></span> %
+      </br>
+      Wind: <span id="wind"></span> km/h
+    </span>
+    </div>
+  </div>
+    <div class="container days">
+    <div class="row row-cols-5"> 
+  <div class="col">
+    <div class="card border-0">
+      <div class="card-body">
+        <h5 class="card-title">Monday</h5>
+        <p class="card-text">+20, sunny</p>
+        <a href="#" class="btn btn-outline-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">More info</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-0">
+      <div class="card-body">
+        <h5 class="card-title">Tuesday</h5>
+        <p class="card-text">+22, sunny</p>
+        <a href="#" class="btn btn-outline-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">More info</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-0">
+      <div class="card-body">
+        <h5 class="card-title">Wednesday</h5>
+        <p class="card-text">+18, cloud</p>
+        <a href="#" class="btn btn-outline-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">More info</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-0">
+      <div class="card-body">
+        <h5 class="card-title">Thursday</h5>
+        <p class="card-text">+16, rain</p>
+        <a href="#" class="btn btn-outline-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">More info</a>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card border-0">
+      <div class="card-body">
+        <h5 class="card-title">Friday</h5>
+        <p class="card-text">+16, sunny</p>
+        <a href="#" class="btn btn-outline-warning" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">More info</a>
+      </div>
+    </div>
+  </div>
+  </div>
+    </div>
+    </div>
+    <span class="link">
+  <a  class="gh-link" id="code" href="https://github.com/itokarchuk/shecodes-week6" target="_blank">Open-Source Code</a> by Ira Tokarchuk
+  </span>
+  <script src="app.js"></script>
+    </body>
+</html>
