@@ -63,11 +63,11 @@ function displayForecast(response) {
         <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
         <div class="forecast-temperature"><span class="forecast-temperature-max">${Math.round(
           forecastDay.temp.max
-        )}</span>º, <span class="forecast-temperature-max">${Math.round(
+        )}º | </span><span class="forecast-temperature-min">${Math.round(
           forecastDay.temp.min
-        )}</span>º
+        )}º</span>
         </br>
-        <span class="forecast-condition">${forecastDay.weather[0].main}</span>
+        <span class="forecast-condition">${forecastDay.weather[0].main.toLowerCase()}</span>
         </div>
         <img src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
@@ -86,16 +86,18 @@ function getForecast(coordinates) {
 }
 
 function displayWeatherCondition(response) {
-  document.querySelector("#show-city").innerHTML = response.data.name;
-  document.querySelector("#temp-main").innerHTML = Math.round(
+  document.querySelector("#show-city").innerHTML = `in ${response.data.name}`;
+  document.querySelector("#temp-main").innerHTML = `${Math.round(
     response.data.main.temp
-  );
+  )}º`;
   document.querySelector("#condition").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = Math.round(
+  document.querySelector(
+    "#humidity"
+  ).innerHTML = ` ${response.data.main.humidity} %`;
+  document.querySelector("#wind").innerHTML = `${Math.round(
     response.data.wind.speed
-  );
+  )} km/h`;
   document
     .querySelector("#icon")
     .setAttribute(
@@ -135,13 +137,13 @@ function convertToFahrenheit(event) {
   event.preventDefault();
   let FahrenheitTemp = (CelsiusTemp * 9) / 5 + 32;
   let TempElement = document.querySelector("#temp-main");
-  TempElement.innerHTML = Math.round(FahrenheitTemp);
+  TempElement.innerHTML = `${Math.round(FahrenheitTemp)}º`;
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
   let TempElement = document.querySelector("#temp-main");
-  TempElement.innerHTML = Math.round(CelsiusTemp);
+  TempElement.innerHTML = `${Math.round(CelsiusTemp)}º`;
 }
 
 let CelsiusTemp = null;

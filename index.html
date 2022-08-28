@@ -28,17 +28,17 @@
       </form>
     </div>
     <div class="col-6">
-      <h4 class="date" id="date">It's Sunday, 26 Jul, 12:00</h4>
+      <h2 class="date" id="date"></h2>
       <div class="container output">
       <div class="row">
       <div class="col">
-      <h4 class="city">in <span id="show-city"></span></h4>
-      <h2> <strong class="degree"><span id="temp-main"></span>º</strong> 
+      <h4 class="city"><span id="show-city"></span></h4>
+      <h4> <strong class="degree"><span id="temp-main"></span></strong> 
         <small class="units"> 
           <a href="#"  id="cels">C</a> | 
           <a href="#" id="fahr">F</a>
         </small>
-      </h2>
+      </h4>
       </div>
       <div class="col">
       <img src=""
@@ -48,13 +48,12 @@
       </div>
       </div>
         <span class="details">
-             </br>
-        Sky: <span id="condition"></span>  
         </br>
-        Humidity: <span id="humidity"></span> %
+       <span class="sky-title">Sky: </span><span class="sky-condition" id="condition"></span>  
+        </br>
+       <span class="humidity-title">Humidity: </span><span id="humidity"></span>
       </br>
-      Wind: <span id="wind"></span> km/h
-    </span>
+     <span class="wind-title">Wind: </span> <span id="wind"></span> 
     </div>
   </div>
     <div class="forecast" id="forecast">
