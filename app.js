@@ -33,6 +33,28 @@ let minute = now.getMinutes();
 let dateFull = document.querySelector("#date");
 dateFull.innerHTML = `Updated on ${day}, ${date} ${month} ${hour}:${minute}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
+
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col">
+        <div class="forecast-day">${day}</div>
+        <div class="forecast-temperature"><span class="forecast-temperature-max">20</span>º, <span class="forecast-temperature-max">18</span>º
+        </br>
+        <span class="forecast-condition">sunny</span>
+        </div>
+        <img src="http://openweathermap.org/img/wn/04d@2x.png" class="icon-forecast" id="icon-forecast">
+  </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#show-city").innerHTML = response.data.name;
   document.querySelector("#temp-main").innerHTML = Math.round(
@@ -105,3 +127,4 @@ let CelsiusLink = document.querySelector("#cels");
 CelsiusLink.addEventListener("click", convertToCelsius);
 
 searchCity();
+displayForecast();
