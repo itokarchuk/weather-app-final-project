@@ -26,7 +26,7 @@ h4 {
     rgba(255, 255, 255, 0.6) 0%,
     rgba(234, 236, 255, 0.6) 90%
   );
-  animation: color 15s infinite linear;
+  animation: color 10s infinite linear;
 }
 
 @keyframes color {
